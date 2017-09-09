@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height:100PX;
+				border:1px solid red;
+				padding:20px;
+			}
+			p{
+				width: 80px;
+				height:80px;
+				border:1px solid #006600
+			
+			}
+		</style>
+	</head>
+	<body>
+		<form action="">
+			<input type="text" name="" id="" value="456" autofocus=""/>
+			<input type="text" name="" id="" value="456" autofocus=""/>
+			<input type="text" name="" id="" value="456"/>
+			<input type="submit" name="" id="ta" value="fdsa" />
+			<input type="image" src="img/HBuilder.png" />
+			<input type="reset" value="chongzhi"/>
+			<button type="button" id="xxs">提交</button>
+			
+		</form>
+		<div  id="mydiv1" class="mydiv" >
+			<p id="txt">
+				<button id='xx' type='button'>click me!</button>
+			</p>
+		</div>
+
+		
+
+		<script type="text/javascript">
+			var ta =document.getElementById('ta');
+			var div1 = document.getElementById('mydiv1');
+			
+			var btn = document.getElementById('xx');
+			var txt =document.getElementById('txt');
+			
+			txt.onclick = function (event){
+				event.stopPropagation()
+				alert(444)
+			}
+			
+			ta.onclick = function(event){
+				event.preventDefault()
+				alert(555)
+			}
+			div1.onclick = function(){
+				alert(2222)
+			};
+			
+			btn.onclick =function(event){
+				event.stopPropagation()
+				alert(111)
+			}
+			
+			
+//			var i=1;
+//			function test(){
+//				this.i=0;
+//			//	console.log(this.i)
+//			}
+//			console.log(test())
+//		
+//			var x ="<font color='#C4C4C4'>违章查询</font>"
+//			
+//				
+//			
+//			var pattern1 = /[\u4e00-\u9fa5]+/g;
+//			var pattern2 = /\[[\u4e00-\u9fa5]+\]/g;
+//			var contents = "<font color='#C4C4C4'>低至</font><font color='#FF0000'>8.8</font><font color='#C4C4C4'>元/次</font>";
+//			content = contents.match(pattern1);
+//		//	console.log(content);
+//			content = contents.match(pattern2);
+//		//	console.log(content);
+//			
+//			var parson = {};
+//			parson.name='zhou';
+//			console.log(parson.name)
+//			Object.defineProperty(parson,'name',{
+//				writable:false,
+//				value:'ling'
+//			})
+//			console.log(parson.name)
+//			parson.name='hua'
+//			console.log(parson.name)
+			
+//			function O(n,a){
+//				this.name = n,
+//				this.age = a,
+//				this.fu =function(){
+//					console.log(this.name+':'+this.age)
+//				}
+//			}
+//
+//			var my0 = new O('来一个',56);
+//			my0.fu();
+//			var my1 =new O('DIRE','90')
+//			my1.fu();
+//			console.log(my0.fu==my1.fu)  
+
+			
+				//  工厂模式创建对象     创建对象  	
+//							function myo(name,age,like){
+//								var o = new Object();
+//								o.name = name;
+//								o.age = age;
+//								o.like = like;
+//								o.fun = function(){
+//									alert(this.name)
+//								};
+//								return o
+//							}
+//							var my1 = myo('zhuo',22,'dai');
+//							my1.fun()
+//							console.log(my1)
+		
+	
+	
+	
+	
+	
+	
+	
+				//构造函数创建对象  constructor(构造函数)
+					//所谓"构造函数"，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。
+					//构造函数存在的问题        每一次生成一个实例，都必须为重复的内容，多占用一些内存。这样既不环保，也缺乏效率	
+//							function Myo(name,age,like){
+//								this.name = name;
+//								this.age = age;
+//								this.like = like;
+//								this.fun =function(){
+//									alert(this.name+':'+this.age)
+//								}
+//							}
+//							var my1 = new Myo('范德萨',34,'赤炎');  //都有一个constructor
+//							var my2 = new Myo('fds',20,'搞个');
+//							my1.fun();
+//							my2.fun();
+//							console.log(my1)
+//							console.log(my2)
+//							console.log(my1.constructor==Myo)
+//							console.log(my2.constructor==Myo)
+//							console.log(my1 instanceof Myo)   //instanceof 返回布尔值     只能用来判断对象和函数，不能用来判断字符串和数字等     与 typeof 相对比
+//							console.log(my1 instanceof Object)
+
+
+
+
+
+
+
+				
+				//原型模式   prototype(原型)
+					//存在的问题是 如果在prototype 中对于包含了引用类型 假如原型链上绑定了一个数组 然后再实例1中插入了一个数字(或者sting)就会导致 实例2 中也存在这个 数字(或者string)
+//						function Myo(){
+//							this.like='dsfa';
+//						}
+//						Myo.prototype.name ='wo是prototype';
+//						Myo.prototype.age = 20;
+//						Myo.prototype.fu=function(){
+//							console.log(this.name+':'+this.age)
+//						};
+//						var mo = new Myo();
+//						mo.fu();
+//						mo.name='5555'; //在实例中途添加name 不会改变prototype(原型)中的值，只是屏蔽了prototype中的 ，因为原理是先找 实例中有没有 有就返回 没有就找prototype(原型)里的
+//					//	delete mo.name;
+//						console.log(mo.name)
+//						var mo2 = new Myo();
+//						console.log(mo2.name)
+//						console.log(mo.fu == mo2.fu);
+//						console.log(Myo.prototype.constructor)
+//						
+//						//查看 测试mo ,mo2 
+//						console.log(Myo.prototype.isPrototypeOf(mo))
+//						console.log(Object.getPrototypeOf(mo)==Myo.prototype)
+//						console.log(Object.getPrototypeOf(mo).name)
+//						//判断属性是在实例中还是在prototype(原型)中,返回true  => 在实例中 
+//						console.log(mo.hasOwnProperty('like'))
+//						console.log(mo2.hasOwnProperty('name'))
+		
+		
+		
+		
+		
+		
+				//构造函数模式和原型模式  
+						//使用最广泛的创建对象方式
+					function Parson(n,a){
+						this.name =n,
+						this.age = a,
+						this.friends =['a','b']
+					};
+					Parson.prototype={
+						constructor:Parson,
+						fu:function(){
+							console.log(this.name+':年林'+this.age)
+						}
+					}
+					
+					var aa = new Parson('zhou',20);
+					var bb = new Parson('ling',30);
+					aa.friends.push('dd');
+					console.log(aa.friends)
+					console.log(bb.friends)
+					
+					console.log(aa.friends==bb.friends)
+					
+					aa.fu();
+					
+					bb.fu()
+		</script>
+		
+		
+	</body>
+</html>
